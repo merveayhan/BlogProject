@@ -63,5 +63,12 @@ namespace BlogProject.UI.Areas.Author.Controllers
             service.ArticleService.Remove(id);
             return Redirect("/Author/Article/List");
         }
+        //***
+        public ActionResult Show(Article data)
+        {
+            AppUser user = service.AppUserService.GetByDefault(x => x.UserName == User.Identity.Name);
+            List<Article> model = service.ArticleService.GetDefault(x => x.AppUserID != user.ID);
+            return View(model);
+        }
     }
 }

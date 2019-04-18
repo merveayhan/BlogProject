@@ -181,6 +181,7 @@
     <Content Include="Areas\Author\Views\Article\Add.cshtml" />
     <Content Include="Areas\Author\Views\Article\List.cshtml" />
     <Content Include="Areas\Author\Views\Article\Update.cshtml" />
+    <Content Include="Areas\Author\Views\Article\Show.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
