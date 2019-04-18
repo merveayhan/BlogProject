@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BlogProject.UI.Areas.Author.Models
+namespace BlogProject.UI.Models.VM
 {
     public class LoginVM
     {

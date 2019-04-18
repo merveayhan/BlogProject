@@ -4,39 +4,4 @@
     Layout = "~/Areas/Author/Views/Shared/AuthorLayoutPage.cshtml";
 }
 
-@model IEnumerable<BlogProject.DAL.ORM.Entity.Article>
-<div class="container">
-    <div class="row">
-        <div class="@TempData["class"]">
-            <a class="btn btn-primary" href="/Article/Add">Yeni Makale</a>
-        </div>
-    </div>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="post-preview">
-                <a href="/Article/Show/@item.ID">
-                    <h2 class="post-title">@item.Header</h2>
-                    <h3 class="post-subtitle">
-                        @if (item.Content.Length > 150)
-                        {
-                            @item.Content.Substring(0, 150)<span>.......</span>
-                        }
-                        else
-                        {
-                            @item.Content
-                        }
-
-                    </h3>
-                </a>
-                <p class="post-meta">
-                    Posted By
-                    <a href="#">@item.AppUser.UserName</a>
-                    @item.PublishDate
-                </p>
-
-            </div>
-        }
-    </div>
-</div>
-
+<h2>AuthorHomeIndex</h2>

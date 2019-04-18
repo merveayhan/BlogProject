@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BlogProject.UI.Areas.Author.Models
+namespace BlogProject.UI.Areas.Author.Models.DTO
 {
-    public class CommentVM
+    public class ArticleDTO:BaseDTO
     {
-        public Guid ID { get; set; }
         public string Header { get; set; }
         public string Content { get; set; }
+        public DateTime? PublishDate { get; set; }
+
+        public Guid CategoryID { get; set; }
     }
 }

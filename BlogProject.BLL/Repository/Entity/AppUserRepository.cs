@@ -20,5 +20,10 @@ namespace BlogProject.BLL.Repository.Entity
 
             //return table.Where(x=> x.UserName== UserName).FirstOrDefault();
         }
+
+        public object FindByuserName(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

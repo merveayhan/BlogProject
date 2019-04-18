@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BlogProject.UI.Areas.Author.Controllers
+namespace BlogProject.UI.Areas.Member.Controllers
 {
     public class BaseController : Controller
     {
