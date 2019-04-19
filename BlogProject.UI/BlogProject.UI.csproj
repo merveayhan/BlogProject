@@ -137,6 +137,9 @@
     <Compile Include="Areas\Member\Controllers\BaseController.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Areas\Member\Models\VM\ArticleCommentVM.cs" />
+    <Compile Include="Areas\Member\Models\VM\CommentVM.cs" />
+    <Compile Include="Areas\Member\Models\VM\JsonLikeVM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +185,7 @@
     <Content Include="Areas\Author\Views\Article\List.cshtml" />
     <Content Include="Areas\Author\Views\Article\Update.cshtml" />
     <Content Include="Areas\Author\Views\Article\Show.cshtml" />
+    <Content Include="Areas\Member\Views\Article\Show.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
@@ -195,7 +199,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Areas\Author\Views\Base\" />
-    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Areas\Member\Models\DTO\" />
     <Folder Include="Areas\Member\Views\Base\" />
     <Folder Include="Content\image\" />
   </ItemGroup>

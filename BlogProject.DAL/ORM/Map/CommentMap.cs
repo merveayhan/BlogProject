@@ -13,8 +13,7 @@ namespace BlogProject.DAL.ORM.Map
         {
             ToTable("dbo.Comments");
             Property(x => x.Content).IsOptional();
-            Property(x => x.Header).IsOptional();
-            Property(x => x.CommentNumber).IsOptional();
+           
 
             HasKey(x => new
             { x.AppUserID, x.ArticleID });

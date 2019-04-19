@@ -8,9 +8,9 @@ namespace BlogProject.DAL.ORM.Entity
 {
     public class Comment:BaseEntity
     {
-        public string Header { get; set; }
+        
         public string Content { get; set; }
-        public string CommentNumber { get; set; }
+      
 
         public Guid ArticleID { get; set; }
         public virtual Article Article { get; set; }
