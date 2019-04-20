@@ -34,43 +34,43 @@ namespace BlogProject.UI.Areas.Member.Controllers
             return View(model);
         }
 
-        public ActionResult AddComment(CommentVM data)
-        {
-            Comment comment = new Comment();
-            comment.AppUserID = service.AppUserService.FindByuserName(HttpContext.User.Identity.Name).ID;
-            comment.ArticleID = data.ID;
-            comment.Content = data.Content;
-            comment.AddDate = DateTime.Now;
-            service.CommentService.Add(comment);
-            return Redirect("/Article/Show/" + data.ID);
-        }
+        //public ActionResult AddComment(CommentVM data)
+        //{
+        //    Comment comment = new Comment();
+        //    comment.AppUserID = service.AppUserService.FindByuserName(HttpContext.User.Identity.Name).ID;
+        //    comment.ArticleID = data.ID;
+        //    comment.Content = data.Content;
+        //    comment.AddDate = DateTime.Now;
+        //    service.CommentService.Add(comment);
+        //    return Redirect("/Article/Show/" + data.ID);
+        //}
 
-        public JsonResult AddLike(Guid id)
-        {
-            JsonLikeVM jr = new JsonLikeVM();
-            Guid appuserID = service.AppUserService.FindByuserName(HttpContext.User.Identity.Name).ID;
+        //public JsonResult AddLike(Guid id)
+        //{
+        //    JsonLikeVM jr = new JsonLikeVM();
+        //    Guid appuserID = service.AppUserService.FindByuserName(HttpContext.User.Identity.Name).ID;
 
-            if (!(service.LikeService.Any(x => x.AppUserID == appuserID && x.ArticleID == id)))
-            {
-                Like like = new Like();
-                like.ArticleID = id;
-                like.AppUserID = appuserID;
-                service.LikeService.Add(like);
+        //    if (!(service.LikeService.Any(x => x.AppUserID == appuserID && x.ArticleID == id)))
+        //    {
+        //        Like like = new Like();
+        //        like.ArticleID = id;
+        //        like.AppUserID = appuserID;
+        //        service.LikeService.Add(like);
 
-                //Kullanıcıya gönderilecek mesaj oluşturulur.
+        //        //Kullanıcıya gönderilecek mesaj oluşturulur.
 
-                jr.Likes = service.LikeService.GetDefault(x => x.ArticleID == id).Count();
-                jr.userMessage = "";
-                jr.isSuccess = true;
-                return Json(jr, JsonRequestBehavior.AllowGet);
-            }
+        //        jr.Likes = service.LikeService.GetDefault(x => x.ArticleID == id).Count();
+        //        jr.userMessage = "";
+        //        jr.isSuccess = true;
+        //        return Json(jr, JsonRequestBehavior.AllowGet);
+        //    }
 
-            jr.isSuccess = false;
-            jr.userMessage = "Bu yazıyı daha önce beğendiniz!";
-            jr.Likes = service.LikeService.GetDefault(x => x.ArticleID == id).Count();
-            return Json(jr, JsonRequestBehavior.AllowGet);
+        //    jr.isSuccess = false;
+        //    jr.userMessage = "Bu yazıyı daha önce beğendiniz!";
+        //    jr.Likes = service.LikeService.GetDefault(x => x.ArticleID == id).Count();
+        //    return Json(jr, JsonRequestBehavior.AllowGet);
 
-        }
+        //}
 
     }
 }
